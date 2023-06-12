@@ -2,84 +2,118 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AquaTech | Página Inicial</title>
+  <title>Outer Wilds | Página Inicial</title>
 
-    <script src="./js/sessao.js"></script>
+  <script src="./js/funcoes.js"></script>
 
-    <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- <link
+  <link rel="icon" href="./assets/icon/OuterWilds-favicon.ico">
+  <link rel="stylesheet" href="./css/estilo.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.cdnfonts.com/css/itc-serif-gothic-2" rel="stylesheet">
+
+  <!-- <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet"> -->
 </head>
 
 <body>
-    <div class="header">
-      <div class="container">
-        <h1 class="titulo">AquaTech</h1>
-        <ul class="navbar">
-          <li class="agora">
-            <a href="#">Inicial</a>
-          </li>
-          <li>
-            <a href="simulador.html">Simulador</a>
-          </li>
-          <li>|</li>
-          <li>
-            <a href="login.html">Login</a>
-          </li>
-          <li>
-            <a href="cadastro.html">Cadastro</a>
-          </li>
-        </ul>
-      </div>
+  <div class="header">
+    <img src="assets/imgs/13 - pppHWfm.png" height="140px">
+    <div class="container">
+      <h1 class="titulo">Outer Wilds</h1>
+      <ul class="navbar">
+        <li class="agora">
+          <a href="#">Inicial</a>
+        </li>
+        <li>|</li>
+        <li>
+          <a href="login.html">Forum</a>
+        </li>
+        <li>
+          <a href="login.html">Escolhas</a>
+        </li>
+        <li>
+          <a href="login.html">Login</a>
+        </li>
+        <li>
+          <a href="cadastro.html">Cadastro</a>
+        </li>
+      </ul>
     </div>
-  
-    <div class="banner">
-      <div class="container">
-        <p>Preservando <span>hoje</span> para existirem <span>amanhã</span>.</p>
-      </div>
+  </div>
+
+  <div id="planeta1">
+    <div id="titulo">
+      <h1 id="nomePlaneta">aaaaaaa</h1>
+      <img id="imgPlaneta" src="assets/imgs/sun.svg" height="240px">
     </div>
-  
-    <div class="social">
-      <div class="container">
-        <div class="boxes">
-          <div class="box">
-            <img src="assets/imgs/planet-earth_color.png">
-            <h4>Missão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/lightbulb_color.png">
-            <h4>Visão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/growth_color.png">
-            <h4>Valores</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-        </div>
-      </div>
+    <div id="descricao"><p id="descPlaneta">BBBBBB</p></div>
+    <span id="fechar" onclick="fecharModal()">X</span>
+  </div>
+
+  <div class="banner">
+    <div class="olho"><img src="assets/imgs/olhodouniverso.png" height="100px"></div>
+    <img src="assets/imgs/sun.svg" onclick="abrirModal('sol')" height="100px">
+    <img src="assets/imgs/sun-station.svg" onclick="abrirModal('estacaoSolar')" height="100px">
+    <img src="assets/imgs/hourglass-twins.svg" onclick="abrirModal('gemeos')" height="100px">
+    <img src="assets/imgs/attlerock.svg" onclick="abrirModal('pedra')" height="100px">
+    <img src="assets/imgs/timberhearth.svg" onclick="abrirModal('recanto')" height="100px">
+    <img src="assets/imgs/interloper.svg" onclick="abrirModal('xereta')" height="100px">
+    <img src="assets/imgs/hollows-lantern.svg" onclick="abrirModal('lanterna')" height="100px">
+    <img src="assets/imgs/brittle-hollow_v32.svg" onclick="abrirModal('vale')" height="100px">
+    <img src="assets/imgs/quantum-moon.svg" onclick="abrirModal('lua')" height="100px">
+    <img src="assets/imgs/giants-deep_v2.svg" onclick="abrirModal('gigante')" height="100px">
+    <img src="assets/imgs/white-hole-station.svg" onclick="abrirModal('estacaoBuraco')" height="100px">
+    <img src="assets/imgs/dark-bramble.svg" onclick="abrirModal('abrolho')" height="100px">
+    <div class="estrelas"></div>
+    <div class="brilhantes"></div>
+    <div class="nuvens"></div>
+  </div>
+
+  <script>
+    function abrirModal(planeta){
+      sol = {
+        img: "assets/imgs/sol.png",
+        nome: "Sol",
+        descricao: "alguma coisa"
+      }
+
+      estacaoSolar = {
+
+      }
+
+      gemeos = {
+
+      }
+
+      pedra = {
+
+      }
+
+      if (planeta == "sol") {
+        nomePlaneta.innerHTML = sol.nome;
+        descPlaneta.innerHTML = sol.descricao;
+        imgPlaneta.src = sol.img;
+      
+      }
+
+      planeta1.style = "display: flex";
+    }
+    function fecharModal(){
+      planeta1.style = "display: none";
+    }
+  </script>
+
+  <div class="footer">
+    <div class="container">
+      <h4>:)</h4>
+      <span class="version">v1.0.0</span>
     </div>
-  
-    <div class="footer">
-      <div class="container">
-        <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-        <span class="version">v1.0.0</span>
-      </div>
-    </div>
-  </body>
+  </div>
+</body>
 
 </html>

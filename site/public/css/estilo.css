@@ -15,41 +15,46 @@ body {
 
 .container {
   display: flex;
-  width: 80%;
+  width: 85%;
   margin: auto;
 }
 
 .header {
-  height: var(--tamanho-header);
-  border-bottom: 2px solid #32b9cd;
+  font-family: 'ITC Serif Gothic', sans-serif;
+  display: flex;
+  height: 130px;
+  border-bottom: 2px solid #f77c33;
 }
+
 
 .header .container {
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  margin: 0;
 }
 
 .header a {
   text-decoration: none;
-  color: #e3b062;
+  color: #f77c33;
 }
 
 .agora {
-  font-weight: 800;
+  font-weight: 1000;
 }
 
 .navbar {
-  width: 300px;
+  width: 500px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   list-style: none;
   color: #e3b062;
+  font-size: 20px;
 }
 
 .titulo {
-  color: #32b9cd;
+  color: #f77c33;
   width: fit-content;
   font-weight: 500;
 }
@@ -59,9 +64,11 @@ body {
 }
 
 .banner {
+  display: flex;
   height: var(--tamanho-banner);
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
-  background-size: cover;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }
 
 .banner .container {
@@ -114,7 +121,7 @@ body {
 
 .login {
   height: var(--tamanho-login);
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-image: url('../assets/imgs/backgroundOuterWilds.png');
   background-size: cover;
 }
 
@@ -132,7 +139,7 @@ body {
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
-  color: palevioletred;
+  color: #f77c33;
   row-gap: 20px;
 }
 
@@ -183,7 +190,7 @@ body {
   font-weight: 600;
   font-size: 18px;
   color: #fff;
-  background-color: #e6005a;
+  background-color: #f77c33;
   width: 120px;
   height: 30px;
   align-self: center;
@@ -215,7 +222,7 @@ body {
   width: 230px;
   position: fixed;
   border-radius: 4px;
-  border: #e6005a 3px solid;
+  border: #f77c33 3px solid;
   padding: 10px;
   margin-right: 10%;
 }
@@ -226,9 +233,9 @@ body {
 }
 
 .footer {
-  height: var(--tamanho-footer);
+  height: 10%;
   width: 100%;
-  background-color: #32b9cd;
+  background-color: #292c54;
   color: #fff;
 }
 
@@ -256,4 +263,114 @@ body {
   flex-direction: column;
   overflow: scroll; 
   height: var(--tamanho-simulador);
+}
+
+.header img {
+  padding-left: 10px;
+}
+
+@keyframes move-nuvens-back {
+  from {background-position: 0 0;}
+  to {background-position: 10000px 0;}
+}
+
+@keyframes move-brilhante-back {
+  from {background-position: 0 0;}
+  to {background-position: -10000px 5000px;}
+}
+
+.estrelas, .brilhantes, .nuvens {
+  margin-top: 0;
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  display: flex;
+}
+
+.estrelas {
+  background: #000 url('..//assets/imgs/stars.png') repeat top center;
+  z-index: 0;
+}
+
+.brilhantes {
+  background: transparent url('..//assets/imgs/twinkling.png') repeat top center;
+  z-index: 1;
+  animation: move-brilhante-back 200s linear infinite;
+}
+
+.nuvens {
+  background: transparent url('..//assets/imgs/clouds.png') repeat top center;
+  z-index: 2;
+  opacity: .4;
+  animation: move-nuvens-back 200s linear infinite;
+}
+
+
+
+.banner img {
+  display: flex;
+  z-index: 3;
+  
+}
+
+.banner img:hover {
+  height: 200px
+}
+
+.banner .olho {
+  display: flex;
+  align-items: end;
+  z-index: 4;
+}
+
+select{
+  border-radius: 20px;
+}
+
+#planeta1 span {
+  position: absolute;
+  right: 0;
+  font-size: 40px;
+  color: #a9c3e5;
+  top: 0;
+}
+
+#planeta1 {
+  width: 100%;
+  height: 570px;
+  position: absolute;
+  background-color: blue;
+  z-index: 5;
+  display: none;
+  transition: 1s;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#planeta1 #fechar{
+  cursor: pointer;
+}
+
+#descricao {
+  /* margin-left: 100px; */
+}
+
+#titulo h1 {
+  margin: 0;
+  background-color: orange;
+  color: #000;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+#titulo {
+  border-radius: 10px;
+  background-color: black;
+  height: 300px;
+  width: 300px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
