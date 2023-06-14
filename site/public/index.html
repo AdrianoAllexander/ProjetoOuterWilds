@@ -22,7 +22,7 @@
 
 <body>
   <div class="header">
-    <img src="assets/imgs/13 - pppHWfm.png" height="140px">
+    <img src="assets/imgs/13 - pppHWfm.png"  height="140px">
     <div class="container">
       <h1 class="titulo">Outer Wilds</h1>
       <ul class="navbar">
@@ -34,7 +34,7 @@
           <a href="login.html">Forum</a>
         </li>
         <li>
-          <a href="login.html">Escolhas</a>
+          <a href="dashboard.html">Escolhas</a>
         </li>
         <li>
           <a href="login.html">Login</a>
@@ -51,19 +51,19 @@
       <h1 id="nomePlaneta">aaaaaaa</h1>
       <img id="imgPlaneta" src="assets/imgs/sun.svg" height="240px">
     </div>
-    <div id="descricao"><p id="descPlaneta">BBBBBB</p></div>
+    <div id="descricao"><p id="descPlaneta">BBBBB</p></div>
     <span id="fechar" onclick="fecharModal()">X</span>
   </div>
 
   <div class="banner">
-    <div class="olho"><img src="assets/imgs/olhodouniverso.png" height="100px"></div>
+    <img src="assets/imgs/olho.png" onclick="abrirModal('olho')" height="100px">
     <img src="assets/imgs/sun.svg" onclick="abrirModal('sol')" height="100px">
     <img src="assets/imgs/sun-station.svg" onclick="abrirModal('estacaoSolar')" height="100px">
     <img src="assets/imgs/hourglass-twins.svg" onclick="abrirModal('gemeos')" height="100px">
     <img src="assets/imgs/attlerock.svg" onclick="abrirModal('pedra')" height="100px">
     <img src="assets/imgs/timberhearth.svg" onclick="abrirModal('recanto')" height="100px">
     <img src="assets/imgs/interloper.svg" onclick="abrirModal('xereta')" height="100px">
-    <img src="assets/imgs/hollows-lantern.svg" onclick="abrirModal('lanterna')" height="100px">
+    <img src="assets/imgs/hollows-lantern.svg" onclick="abrirModal('luzeiro')" height="100px">
     <img src="assets/imgs/brittle-hollow_v32.svg" onclick="abrirModal('vale')" height="100px">
     <img src="assets/imgs/quantum-moon.svg" onclick="abrirModal('lua')" height="100px">
     <img src="assets/imgs/giants-deep_v2.svg" onclick="abrirModal('gigante')" height="100px">
@@ -76,30 +76,153 @@
 
   <script>
     function abrirModal(planeta){
+
+      olho = {
+        img: "assets/imgs/The_Eye.jpeg",
+        nome: "Olho do Universo",
+        descricao: "O Olho do Universo é um objeto planetário mais antigo que o próprio universo, que está em uma órbita distante ao redor do Sol. Aprender sobre o Olho do Universo e descobrir as informações e equipamentos necessários para alcançá-lo representa o objetivo pretendido do jogo. Visualmente, o Olho se parece com um planeta escuro cercado por uma tempestade roxa. Raios ocasionais também podem ser observados e galhos estranhos se espalham do planeta para a tempestade. Esses galhos são exatamente os mesmos do símbolo do Olho visto pelo Nomai. O Olho do Universo tem uma lua, a Lua Quântica. Solanum explica que a Lua Quântica é a lua do Olho e que sua proximidade com o Olho provavelmente a tornou quântica."
+      }
+
       sol = {
         img: "assets/imgs/sol.png",
         nome: "Sol",
-        descricao: "alguma coisa"
+        descricao: "O Sol é uma grande estrela da sequência principal no centro do Sistema Solar, que começa cada loop como uma estrela amarela padrão. À medida que o tempo avança no loop, o Sol envelhece e cresce. Aos 22 minutos do loop, o sol explode em uma supernova violenta, com o ciclo terminando logo depois."
       }
 
       estacaoSolar = {
-
+        img: "assets/imgs/24 - estacao.png",
+        nome: "Estação Solar",
+        descricao: "A Estação Solar é um satélite composto por dois enormes módulos conectados por uma passagem destruída. A estação contém muitos pisos antigravitacionais, para que seus usuários possam caminhar em vez de cair livremente. A Estação Solar contém duas Estátuas Nomai inativas e o cadáver de Idaea. Depois de não receber um comando por mais de dez minutos devido à morte do Nomai, a Estação do Sol entrou em modo de hibernação e está offline há 281.042 anos."
       }
 
       gemeos = {
-
+        img: "assets/imgs/gemeosAmpulheta.png",
+        nome: "Gêmeos da Ampulheta",
+        descricao: "Os gêmeos da ampulheta são planetas binários que orbitam um ao outro, são os corpos celestes mais próximos do Sol. O Gêmeo Cálido é formado principalmente por rochas desérticas e é dividido em duas metades por um amplo desfiladeiro equatorial, e o Gêmeo Cinzento é quase inteiramente feito de areia colocada sobre um núcleo rochoso preto. Dois minutos no ciclo do jogo, o Gêmeo Cálido começará a puxar areia do Gêmeo Cinzento e assim como uma ampulheta, toda a areia inicialmente está no Gêmeo Cinzento, mas depois 'cai' no Gêmeo Cálido ao longo de 20 minutos."
       }
 
       pedra = {
-
+        img: "assets/imgs/1 - pedradelia.png",
+        nome: "Pedra de Lia",
+        descricao: "A Pedra de Lia é o único satélite natural do Recanto Lenhoso. Existem algumas grandes crateras com pedaços de informação nelas, e também o primeiro localizador do olho que você encontrará no jogo, além de ser a primeira menção do Olho do Universo nos textos Nomai. O posto costumava servir como um pit-stop para os Lenhosos fazerem seu primeiro voo espacial, nos dias mais turbulentos de seu programa espacial. Dentro do posto avançado reside o próprio Esker em sua cabana de madeira."
       }
+
+      recanto = {
+        img: "assets/imgs/26 - recanto.png",
+        nome: "Recanto Lenhoso",
+        descricao: "Recanto Lenhoso é o planeta natal dos Lenhosos, e onde o jogador começa sua jornada. Tem uma composição principalmente rochosa acentuada por florestas, cordilheiras e cachoeiras. O terreno tem pouca variação fora das planícies gramadas, montanhas e grandes crateras, uma das quais forma a área da vila."
+      }
+
+      xereta = {  
+        img: "assets/imgs/xereta.png",
+        nome: "Xereta",
+        descricao: "O Sol é uma grande estrela da sequência principal no centro do Sistema Solar, que começa cada loop como uma estrela amarela padrão. À medida que o tempo avança no loop, o Sol envelhece e cresce. Aos 22 minutos do loop, o sol explode em uma supernova violenta, com o ciclo terminando logo depois."
+      }
+
+      luzeiro = {
+        img: "assets/imgs/14 - lanterna.png",
+        nome: "Luzeiro do Vale",
+        descricao: "O Luzeiro do Vale é uma lua relativamente pequena, mas altamente vulcânica, orbitando o Vale Incerto. Ele possui quatro vulcões que lançam bolas de lava no espaço em intervalos curtos aleatórios. Isso esgota lentamente as reservas de lava da lua e revela a superfície da lua ao longo do loop. A maioria das bolas de lava caem no Vale Incerto, fazendo com que partes da crosta colapsem no buraco negro em seu centro. A lua tem um eixo de rotação muito incomum, tornando a trajetória da bola de lava altamente caótica."
+      }
+
+      vale = {
+        img: "assets/imgs/3 - valeincerto.png",
+        nome: "Vale Incerto",
+        descricao: "O Vale Incerto é um planeta composto por uma crosta rochosa e quebradiça, ele possui um interior oco com um grande buraco negro servindo como núcleo do planeta. Bombardeamentos regulares da lua do planeta fazem com que fragmentos da frágil crosta se quebrem ao longo do ciclo, caindo no núcleo do buraco negro. O planeta é o lar de inúmeras estruturas Nomai espalhadas sobre e sob a crosta do planeta, incluindo a enorme Cidade Suspensa, a Torre do Conhecimento Quântico, o Observatório do Sul, um Canhão de Gravidade e a Forja do Buraco Negro usada pelos Nomai para criar os núcleos de translocação para o Projeto do Gêmeo Cinzento."
+      }
+
+      lua = {
+        img: "assets/imgs/18 - luaquantica.png",
+        nome: "Lua Quântica",
+        descricao: "A Lua Quântica é um satélite natural enigmático que exibe propriedades quânticas macroscópicas, aparecendo em muitos locais diferentes do Sistema Solar e desaparecendo quando não observado. A Lua está coberta por uma espessa camada de nuvens cinza, obscurecendo completamente sua superfície, ela emite um sinal na frequência das Flutuações Quânticas e pode ser detectada no onduloscópio. Numerosos localizadores de Lua Quântica construídos pelos Nomai existem em todo o sistema solar, com a capacidade de apontar a localização da Lua Quântica, como no Pólo Sul do Gêmeo Cálido e a Torre do Conhecimento Quântico."
+      }
+
+      gigante = {
+        img: "assets/imgs/11 - gigante.png",
+        nome: "Profundezas do Gigante",
+        descricao: "Profundezas do Gigante é um planeta oceânico feito de camadas fluidas cada vez mais densas, com cinco pequenas ilhas na superfície preenchidos com clima turbulento e uma atmosfera densa. O planeta é o maior e mais pesado do sistema solar e apresenta uma camada externa verde gasosa espessa, efetivamente opaca. Ocasionalmente, pequenas ilhas flutuantes que flutuam nas águas superficiais passarão brevemente pela atmosfera para o espaço, antes de cair de volta à superfície. O Canhão Orbital orbita o equador do planeta e dispara em uma direção aleatória no início de cada loop, quebrando-se em pedaços ao fazê-lo."
+      }
+
+      estacaoBuraco = {
+        img: "assets/imgs/buracobranco.png",
+        nome: "Estação do Buraco Branco",
+        descricao: "A Estação do Buraco Branco é uma estação espacial posicionada perto do Buraco Branco que está emparelhada com o Buraco Negro do Vale Incerto. A própria estação é composta por dois níveis - o portal de translocação e a sala de controle que ativa e orienta a rotação da estação. A Estação está parcialmente congelada, devido a estar suspensa no espaço, sem uso por milênios, ela serve como uma introdução à mecânica de translocação Nomai, e um caminho rápido de volta para o Vale Incerto caso alguém tropece no buraco negro do planeta por engano."
+      }
+
+      abrolho = {
+        img: "assets/imgs/abrolhosombrio.png",
+        nome: "Abrolho Sombrio",
+        descricao: "O Abrolho Sombrio é uma grande e confusa rede de videiras retorcidas e passagens de teletransporte, o planeta é composto por restos implodidos de um quinto planeta que há muito foi infectado e invadido pelo crescimento de plantas que dobram o espaço. O exterior do Abrolho Sombrio consiste em uma enorme semente coberta com numerosas aberturas, cobertas por uma camada de névoa. As sementes atuam como os links entre os nós, elas geralmente emitem luz, que é visível através do nevoeiro e atuam como guias importantes no espaço interior. O tamboril é um peixe gigante que reside em seu interior, ele é cego, confiando no som para caçar suas presas. Dentro dos nós, o tamboril geralmente é inativo e imóvel, permanecendo onde está até ser despertado por um som passageiro."
+      }
+
+      if (planeta == "olho") {
+        nomePlaneta.innerHTML = olho.nome;
+        descPlaneta.innerHTML = olho.descricao;
+        imgPlaneta.src = olho.img;
+       }
 
       if (planeta == "sol") {
         nomePlaneta.innerHTML = sol.nome;
         descPlaneta.innerHTML = sol.descricao;
         imgPlaneta.src = sol.img;
-      
       }
+      if (planeta == "estacaoSolar") {
+        nomePlaneta.innerHTML = estacaoSolar.nome;
+        descPlaneta.innerHTML = estacaoSolar.descricao;
+        imgPlaneta.src = estacaoSolar.img;
+      }
+      if (planeta == "gemeos") {
+        nomePlaneta.innerHTML = gemeos.nome;
+        descPlaneta.innerHTML = gemeos.descricao;
+        imgPlaneta.src = gemeos.img;
+      }
+      if (planeta == "pedra") {
+        nomePlaneta.innerHTML = pedra.nome;
+        descPlaneta.innerHTML = pedra.descricao;
+        imgPlaneta.src = pedra.img;
+      }
+      if (planeta == "recanto") {
+        nomePlaneta.innerHTML = recanto.nome;
+        descPlaneta.innerHTML = recanto.descricao;
+        imgPlaneta.src = recanto.img;
+      }
+      if (planeta == "xereta") {
+        nomePlaneta.innerHTML = xereta.nome;
+        descPlaneta.innerHTML = xereta.descricao;
+        imgPlaneta.src = xereta.img;
+      }
+      if (planeta == "luzeiro") {
+        nomePlaneta.innerHTML = luzeiro.nome;
+        descPlaneta.innerHTML = luzeiro.descricao;
+        imgPlaneta.src = luzeiro.img;
+      }
+      if (planeta == "vale") {
+        nomePlaneta.innerHTML = vale.nome;
+        descPlaneta.innerHTML = vale.descricao;
+        imgPlaneta.src = vale.img;
+      }
+      if (planeta == "lua") {
+        nomePlaneta.innerHTML = lua.nome;
+        descPlaneta.innerHTML = lua.descricao;
+        imgPlaneta.src = lua.img;
+      }
+      if (planeta == "gigante") {
+        nomePlaneta.innerHTML = gigante.nome;
+        descPlaneta.innerHTML = gigante.descricao;
+        imgPlaneta.src = gigante.img;
+      }
+      if (planeta == "estacaoBuraco") {
+        nomePlaneta.innerHTML = estacaoBuraco.nome;
+        descPlaneta.innerHTML = estacaoBuraco.descricao;
+        imgPlaneta.src = estacaoBuraco.img;
+      }
+      if (planeta == "abrolho") {
+        nomePlaneta.innerHTML = abrolho.nome;
+        descPlaneta.innerHTML = abrolho.descricao;
+        imgPlaneta.src = abrolho.img;
+      }
+    
+
 
       planeta1.style = "display: flex";
     }

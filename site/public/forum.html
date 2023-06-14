@@ -2,91 +2,211 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Outer Wilds | Forum</title>
+  <title>Outer Wilds | Forum</title>
 
-    <script src="./js/funcoes.js"></script>
+  <script src="./js/funcoes.js"></script>
 
-    <link rel="icon" href="./assets/icon/OuterWilds-favicon.ico">
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.cdnfonts.com/css/itc-serif-gothic-2" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+  <link rel="icon" href="./assets/icon/OuterWilds-favicon.ico">
+  <link rel="stylesheet" href="./css/estilo.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.cdnfonts.com/css/itc-serif-gothic-2" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
 
-    <!--header inicio-->
-    <div class="header">
-        <img src="assets/imgs/13 - pppHWfm.png" height="140px">
-        <div class="container">
-          <h1 class="titulo">Outer Wilds</h1>
-          <ul class="navbar">
-            <li class="agora">
-              <a href="index.html">Inicial</a>
-            </li>
-            <li>|</li>
-            <li>
-              <a href="login.html">Forum</a>
-            </li>
-            <li>
-              <a href="login.html">Escolhas</a>
-            </li>
-            <li>
-              <a href="login.html">Login</a>
-            </li>
-            <li>
-              <a href="cadastro.html">Cadastro</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-
-    <!-- simulador inicio -->
-    <div class="simulador">
-        <div class="container">
-            <h2>Simulador</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
-
-        </div>
+  <!--header inicio-->
+  <div class="header">
+    <img src="assets/imgs/13 - pppHWfm.png" height="140px">
+    <div class="container">
+      <h1 class="titulo">Outer Wilds</h1>
+      <ul class="navbar">
+        <li class="agora">
+          <a href="index.html">Inicial</a>
+        </li>
+        <li>|</li>
+        <li>
+          <a href="login.html">Forum</a>
+        </li>
+        <li>
+          <a href="dashboard.html">Escolhas</a>
+        </li>
+        <li>
+          <a href="login.html">Login</a>
+        </li>
+        <li>
+          <a href="cadastro.html">Cadastro</a>
+        </li>
+      </ul>
     </div>
-    <!-- simulador fim -->
+  </div>
 
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-          <h4>:)</h4>
-          <span class="version">v1.0.0</span>
-        </div>
-      </div>
-    <!--footer fim-->
+
+  <!-- simulador inicio -->
+  <div id="formulario">
+    <h4 style="color: #6169c7;">Título:</h4>
+    <input type="text" id="iptTitulo">
+    <h4 style="color: #6169c7;">Comentário:</h4>
+    <input type="textarea"  maxlength="250" id="iptComentario">
+    <br>
+    <button onclick="comentar()">Enviar</button>
+  </div>
+  <!-- simulador fim -->
+
+  <div id="comentarios"></div>
+
+  <!--footer inicio-->
+  <div class="footer">
+    <div class="container">
+      <h4>:)</h4>
+      <span class="version">v1.0.0</span>
+    </div>
+  </div>
+  <!--footer fim-->
 
 
 </body>
+
+<script>
+
+
+selectComentario();
+
+
+  function comentar() {
+    iptTitulo.value = ""
+    iptComentario.value = ""
+    
+    var data = new Date();
+
+    var ano = data.getFullYear();
+    var mes = data.getMonth();
+    var dia = data.getDate();
+    var hora = data.getHours();
+    var minuto = data.getMinutes();
+    var segundo = data.getSeconds();
+
+    hora = hora - 3;
+
+    dataComment = `${ano}-${mes}-${dia} ${hora}:${minuto}:${segundo}`;
+
+    var idUser = sessionStorage.ID_USUARIO;
+    var tituloVar = iptTitulo.value;
+    var comentario = iptComentario.value;
+
+    fetch("/usuarios/comentar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        idUserServer: idUser,
+        tituloServer: tituloVar,
+        comentarioServer: comentario,
+        dataCommentServer: dataComment
+      })
+    }).then(function (resposta) {
+
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+        selectComentario();
+      } else {
+        throw ("Houve um erro ao tentar realizar o cadastro!");
+      }
+    }).catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    });
+
+    return false;
+
+  }
+
+  function selectComentario() {
+    fetch("/usuarios/selectComentario").then(function (resposta){
+      if (resposta.ok) {
+        if(resposta.status == 204) {
+          var feed = document.getElementById("comentarios");
+          var mensagem = document.createElement("p");
+          mensagem.innerHTML = "Ainda não há comentários :/"
+          feed.appendChild(mensagem);
+          throw "Nenhum resultado encontrado!"
+        }
+
+        resposta.json().then(function (resposta) {
+          console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+          var feed = document.getElementById("comentarios");
+
+          feed.innerHTML = "";
+          for(let i = 0; i < resposta.length; i++) {
+            var publicacao = resposta[i];
+
+            var source; 
+
+            if (publicacao.planeta == "Gêmeos da Ampulheta") {
+              source = "assets/imgs/gemeosAmpulheta.png"
+            }
+            if (publicacao.planeta == "Recanto Lenhoso") {
+              source = "assets/imgs/26 - recanto.png"
+            }
+            if (publicacao.planeta == "Vale Incerto") {
+              source = "assets/imgs/3 - valeincerto.png"
+            }
+            if (publicacao.planeta == "Profundezas do Gigante") {
+              source = "assets/imgs/11 - gigante.png"
+            }
+            if (publicacao.planeta == "Abrolho Sombrio") {
+              source = "assets/imgs/abrolhosombrio.png"
+            }
+
+
+            var divComentario = document.createElement("div");
+            var imagem = document.createElement("img")
+            var nomeComentario = document.createElement("p");
+            var astroComentario = document.createElement("p")
+            var planetaComentario = document.createElement("p")
+            var planetaIMGComentario = document.createElement("img")
+            var tituloComentario = document.createElement("p");
+            var textoComentario = document.createElement("p");
+            var dataComentario = document.createElement("p");
+                 
+            imagem.src = `/assets/imgs/avatar-removebg-preview.png`
+            nomeComentario.innerHTML = `<span style="color: rgb(42, 45, 85); font-weight: 650;">Nome do Usuário: </span>${publicacao.nome}`
+            astroComentario.innerHTML = `<span style="color: rgb(42, 45, 85); font-weight: 650;">Nome do Astronauta Favorito: </span>${publicacao.astronauta}`
+            planetaComentario.innerHTML = `<span style="color: rgb(42, 45, 85); font-weight: 650;">Nome do Planeta Favorito: </span>${publicacao.planeta}`
+            planetaIMGComentario.src = `${source}`
+            tituloComentario.innerHTML = `<span style="color: rgb(42, 45, 85); font-weight: 650;">Título: </span>${publicacao.titulo}`
+            textoComentario.innerHTML =  `<span style="color: rgb(42, 45, 85); font-weight: 650;">Comentário: </span>${publicacao.txt}`
+            dataComentario.innerHTML = `<span style="color: rgb(42, 45, 85); font-weight: 650;">Data de publicação: </span>${publicacao.dateComment}`
+
+            divComentario.className = "classComentarios";
+            planetaComentario.className = "planetaP"
+
+            feed.appendChild(divComentario);
+            divComentario.appendChild(imagem);
+            divComentario.appendChild(nomeComentario);
+            divComentario.appendChild(astroComentario);
+            divComentario.appendChild(planetaComentario);
+            planetaComentario.appendChild(planetaIMGComentario);
+            divComentario.appendChild(tituloComentario);
+            divComentario.appendChild(textoComentario);
+            divComentario.appendChild(dataComentario);
+          }
+        });
+      } else{
+        throw ("Houve um erro na API!")
+      }
+    }).catch(function (resposta) {
+      console.error(resposta);
+    });
+  }
+</script>
 
 </html>

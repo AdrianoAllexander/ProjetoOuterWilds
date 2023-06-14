@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AquaTech | Cadastro</title>
+    <title>Outer Wilds | Cadastro</title>
 
 
     <script src="./js/funcoes.js"></script>
@@ -37,7 +37,7 @@
               <a href="login.html">Forum</a>
             </li>
             <li>
-              <a href="login.html">Escolhas</a>
+              <a href="dashboard.html">Escolhas</a>
             </li>
             <li>
               <a href="login.html">Login</a>
@@ -72,6 +72,10 @@
                         <input id="nome_input" type="text" placeholder="Seu nome">
                     </div>
                     <div class="campo">
+                        <span>Data de Nascimento:</span>
+                        <input id="data_input" type="date">
+                    </div>
+                    <div class="campo">
                         <span>E-mail:</span>
                         <input id="email_input" type="text" placeholder="meuemail@provedor.com">
                     </div>
@@ -85,22 +89,22 @@
                     </div>
                     <div class="campo">
                         <span>Planeta Favorito:</span>
-                        <select name="" id="">
-                            <option value="">Gêmeos da Ampulheta</option>
-                            <option value="">Recanto Lenhoso</option>
-                            <option value="">Vale Incerto</option>
-                            <option value="">Profundezas do Gigante</option>
-                            <option value="">Abrolho Sombrio</option>
+                        <select name="" id="idPlaneta">
+                            <option value="Gêmeos da Ampulheta">Gêmeos da Ampulheta</option>
+                            <option value="Recanto Lenhoso">Recanto Lenhoso</option>
+                            <option value="Vale Incerto">Vale Incerto</option>
+                            <option value="Profundezas do Gigante">Profundezas do Gigante</option>
+                            <option value="Abrolho Sombrio">Abrolho Sombrio</option>
                         </select>         
                     </div>
                     <div class="campo">
                         <span>Astronauta Favorito:</span>
-                        <select name="" id="">
-                            <option value="">Cherte</option>
-                            <option value="">Esker</option>
-                            <option value="">Riebeck</option>
-                            <option value="">Gabro</option>
-                            <option value="">Feldspato</option>
+                        <select name="" id="idAstro">
+                            <option value="Cherte">Cherte</option>
+                            <option value="Esker">Esker</option>
+                            <option value="Riebeck">Riebeck</option>
+                            <option value="Gabro">Gabro</option>
+                            <option value="Feldspato">Feldspato</option>
                         </select>                        
                     </div>
                     <button class="botao" onclick="cadastrar()">Cadastrar</button>
@@ -131,7 +135,6 @@
 
 <script>
     function cadastrar() {
-        aguardar();
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
@@ -139,17 +142,18 @@
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var planeta = idPlaneta.value;
+        var astro = idAstro.value;
+        var data = data_input.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+        // if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        //     cardErro.style.display = "block"
+        //     mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
-            finalizarAguardar();
-            return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
+        // }
+        // else {
+        //     setInterval(sumirMensagem, 5000)
+        // }
 
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
@@ -161,6 +165,32 @@
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
+                dataServer: data,
+                planetaServer: planeta,
+                astroServer: astro,
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+
+
+
+
+
+
+
+
+                fetch("/usuarios/cadastrarLogin", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
@@ -169,22 +199,49 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                cardErro.style.display = "block";
+                
 
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                alert("Cadastro de login realizado com sucesso! Redirecionando para tela de Login...")
 
                 setTimeout(() => {
                     window.location = "login.html";
                 }, "2000")
 
-                limparFormulario();
-                finalizarAguardar();
+            
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro de login!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    
+
+
+
+
+
+
+
+
+
+
+
+                
+
+                alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...")
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+            
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
         });
 
         return false;

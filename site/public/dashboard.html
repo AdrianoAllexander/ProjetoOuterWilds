@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outer Wilds | Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./js/funcoes.js"></script>
+  <link rel="icon" href="./assets/icon/OuterWilds-favicon.ico">
+  <link rel="stylesheet" href="./css/estilo.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.cdnfonts.com/css/itc-serif-gothic-2" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="header">
+    <img src="assets/imgs/13 - pppHWfm.png" height="140px">
+    <div class="container">
+      <h1 class="titulo">Outer Wilds</h1>
+      <ul class="navbar">
+        <li class="agora">
+          <a href="index.html">Inicial</a>
+        </li>
+        <li>|</li>
+        <li>
+          <a href="login.html">Forum</a>
+        </li>
+        <li>
+          <a href="dashboard.html">Escolhas</a>
+        </li>
+        <li>
+          <a href="login.html">Login</a>
+        </li>
+        <li>
+          <a href="cadastro.html">Cadastro</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="caixona"> 
+
+    <h4 id="astro">Astronautas Favoritos por usuários</h4>
+  <div id="graficoAstro" style="position: relative; height:40vh; width:80vw">
+    <canvas id="grafico1"></canvas>
+  </div>
+    <h4>Planetas Favoritos por usuários</h4>
+  <div id="graficoPlaneta" style="position: relative; height:40vh; width:80vw">
+    <canvas id="grafico2"></canvas>
+  </div>
+</div>
+
+  <div class="footer">
+    <div class="container">
+      <h4>:)</h4>
+      <span class="version">v1.0.0</span>
+    </div>
+  </div>
+
+
+
+
+
+</body>
+
+</html>
+
+<script>
+
+  fetch("usuarios/listarGrafico", { cache: 'no-store' })
+    .then((response) => {
+      if (response.ok) {
+        response.json().then((resposta) => {
+          plotarGrafico(resposta, 1);
+        })
+      } else {
+        console.log(response);
+      }
+    }).catch((erro) => {
+      console.log(erro);
+    })
+
+  function plotarGrafico(resposta, idGrafico) {
+
+    console.log('iniciando plotagem do gráfico...');
+
+    // Criando estrutura para plotar gráfico - labels
+    let labels = [];
+
+    // Criando estrutura para plotar gráfico - dados
+    let dados = {
+      labels: labels,
+      datasets: [{
+        label: 'Astronautas',
+        data: [],
+        fill: true,
+        backgroundColor: 'rgb(239, 124, 51)',
+        borderColor: 'rgb(75, 192, 192)'
+      }],
+    };
+
+    console.log('----------------------------------------------')
+    console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+    console.log(resposta)
+
+    // Inserindo valores recebidos em estrutura para plotar o gráfico
+    for (i = 0; i < resposta.length; i++) {
+      var registro = resposta[i];
+      labels.push(registro.astronauta);
+      dados.datasets[0].data.push(registro.usuarios);
+    }
+
+    console.log('----------------------------------------------')
+    console.log('O gráfico será plotado com os respectivos valores:')
+    console.log('Labels:')
+    console.log(labels)
+    console.log('Dados:')
+    console.log(dados.datasets)
+    console.log('----------------------------------------------')
+
+    // Criando estrutura para plotar gráfico - config
+    const config = {
+        type: 'bar',
+        data: dados,
+        options: {
+          plugins: {
+            legend: {
+              labels: {
+                color: 'white' // Defina a cor desejada para o texto do gráficoAstro
+              }
+            }
+          }
+        }
+      };
+
+    // Adicionando gráfico criado em div na tela
+    let myChart = new Chart(
+        document.getElementById(`grafico${idGrafico}`),
+        config
+      );
+      myChart.update();
+    }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    fetch("usuarios/listarGrafico2", { cache: 'no-store' })
+      .then((response) => {
+        if (response.ok) {
+          response.json().then((resposta) => {
+            plotarGrafico2(resposta, 2);
+          })
+        } else {
+          console.log(response);
+        }
+      }).catch((erro) => {
+        console.log(erro);
+      })
+
+    function plotarGrafico2(resposta, idGrafico) {
+
+      console.log('iniciando plotagem do gráfico...');
+
+      // Criando estrutura para plotar gráfico - labels
+      let labels = [];
+
+      // Criando estrutura para plotar gráfico - dados
+      let dados = {
+        labels: labels,
+        datasets: [{
+          label: 'Planetas',
+          data: [],
+          fill: true,
+          backgroundColor: 'rgb(239, 124, 51)',
+          borderColor: 'rgb(75, 192, 192)'
+        }],
+      };
+
+      console.log('----------------------------------------------')
+      console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+      console.log(resposta)
+
+      // Inserindo valores recebidos em estrutura para plotar o gráfico
+      for (i = 0; i < resposta.length; i++) {
+        var registro = resposta[i];
+        labels.push(registro.planeta);
+        dados.datasets[0].data.push(registro.usuarios);
+      }
+
+      console.log('----------------------------------------------')
+      console.log('O gráfico será plotado com os respectivos valores:')
+      console.log('Labels:')
+      console.log(labels)
+      console.log('Dados:')
+      console.log(dados.datasets)
+      console.log('----------------------------------------------')
+
+      // Criando estrutura para plotar gráfico - config
+      const config = {
+        type: 'bar',
+        data: dados,
+        options: {
+          plugins: {
+            legend: {
+              labels: {
+                color: 'white' // Defina a cor desejada para o texto do gráficoAstro
+              }
+            }
+          }
+        }
+      };
+
+      // Adicionando gráfico criado em div na tela
+      let myChart = new Chart(
+        document.getElementById(`grafico${idGrafico}`),
+        config
+      );
+      myChart.update();
+    }
+</script>
